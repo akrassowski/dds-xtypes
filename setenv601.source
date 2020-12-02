@@ -1,0 +1,4 @@
+pushd /home/andy/rti_connext_dds-6.0.1/resource/scripts >& /dev/null
+source rtisetenv_i86Linux3gcc4.8.2.bash
+popd >& /dev/null
+echo NDDSHOME = $NDDSHOME
