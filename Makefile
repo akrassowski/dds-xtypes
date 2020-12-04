@@ -23,18 +23,18 @@ endif
 
 SOURCE_DIR = 
 
-TARGET_ARCH = i86Linux3gcc4.8.2
+TARGET_ARCH = x64Linux3gcc5.4.0
 
 ifndef COMPILER
 COMPILER = g++
 endif
-COMPILER_FLAGS = -m32 -Wall 
+COMPILER_FLAGS = -m64 -Wall 
 ifndef LINKER
 LINKER = g++
 endif
-LINKER_FLAGS = -m32 -static-libgcc -Wl,--no-as-needed
+LINKER_FLAGS = -m64 -static-libgcc -Wl,--no-as-needed
 SYSLIBS = -ldl -lnsl -lm -lpthread -lrt
-DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_CONNEXT_DDS
+DEFINES = -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT -DRTI_CONNEXT_DDS
 ifndef DEBUG
 DEBUG=0 
 endif
@@ -67,10 +67,15 @@ LIBS = -L$(NDDSHOME)/lib/$(TARGET_ARCH) \
         -lnddscore$(SHAREDLIB_SFX)$(DEBUG_SFX) \
         $(SYSLIBS)
 
-SOURCES = \
-  $(SOURCE_DIR)ShapeType_main.cxx \
+GEN_SRCS = \
   $(SOURCE_DIR)ShapeType.cxx \
+  $(SOURCE_DIR)ShapeTypePlugin.cxx \
   $(SOURCE_DIR)ShapeTypeSupport.cxx
+
+SOURCES = \
+  $(SOURCE_DIR)ShapeType_main.cxx $(GEN_SRCS)
+
+GEN_HDRS = $(GEN_SRCS:%.cxx=%.h)
 
 OBJS = $(SOURCES:%.cxx=objs/$(TARGET_ARCH)/%.o)
 EXEC          = ShapeType_main
@@ -82,25 +87,26 @@ $(TARGET_ARCH) : $(DIRECTORIES) $(OBJS) \
 	$(EXEC:%=objs/$(TARGET_ARCH)/%.o) \
 	$(EXEC:%=objs/$(TARGET_ARCH)/%)
 
+## link: objs/$(TARGET_ARCH)/$(EXEC)  
+
 objs/$(TARGET_ARCH)/% : objs/$(TARGET_ARCH)/%.o
-	$(LINKER) $(LINKER_FLAGS)   -o $@ $@.o $(LIBS)
+	$(LINKER) $(LINKER_FLAGS)   -o $@ $(OBJS) $(LIBS)
 
 objs/$(TARGET_ARCH)/%.o : $(SOURCE_DIR)%.cxx   $(SOURCE_DIR)ShapeType.h 
 	$(COMPILER) $(COMPILER_FLAGS)  -o $@ $(DEFINES) $(INCLUDES) -c $<
 
 #
-# Uncomment these lines if you want the support files regenerated when idl
-# file is modified
 #
+# support files will be regenerated when idl file is modified
+$(GEN_HDRS) $(GEN_SRCS): $(SOURCE_DIR)ShapeType.idl Makefile
+	$(NDDSHOME)/bin/rtiddsgen $(SOURCE_DIR)ShapeType.idl -replace \
+        -language C++ -platform $(TARGET_ARCH)
+
 #
-$(SOURCE_DIR)ShapeTypePlugin.cxx \
-$(SOURCE_DIR)ShapeType.cxx \
-$(SOURCE_DIR)ShapeTypeSupport.cxx \
-$(SOURCE_DIR)ShapeType.h \
-$(SOURCE_DIR)ShapeTypePlugin.h \
-$(SOURCE_DIR)ShapeTypeSupport.h : \
-	$(SOURCE_DIR)ShapeType.idl
-	$(NDDSHOME)/bin/rtiddsgen $(SOURCE_DIR)ShapeType.idl -replace -language C++
+# remove all buildable files
+clean:
+	@rm -f $(GEN_SRCS) $(GEN_HDRS) $(EXEC)
+	@rm -rf objs
 #
 # Here is how we create those subdirectories automatically.
 %.dir : 
@@ -109,7 +115,11 @@ $(SOURCE_DIR)ShapeTypeSupport.h : \
 		echo "Making directory $*"; \
 		mkdir -p $* ; \
 	fi;
+#
+# helper to let make tell some values for troubleshooting
 tell:
-	echo SOURCES = $(SOURCES)
-	echo OBJS = $(OBJS)
-
+	#@echo LIBS = $(LIBS)
+	#@echo SOURCES = $(SOURCES)
+	#@echo GEN_S = $(GEN_SRCS)
+	#@echo GEN_H = $(GEN_HDRS)
+	@echo OBJS = $(OBJS)
