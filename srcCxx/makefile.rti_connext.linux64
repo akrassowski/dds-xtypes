@@ -26,7 +26,9 @@ ifndef NDDSHOME
 NDDSHOME := $(HOME)/rti_connext_dds-6.0.1
 endif
 
-TARGET_ARCH    = x64Linux4gcc7.3.0
+#TARGET_ARCH    = x64Linux4gcc7.3.0
+#TARGET_ARCH    = $(architecture_name)
+TARGET_ARCH    = x64Linux3gcc5.4.0
 DEFINES       += -DRTI_CONNEXT_DDS -DRTI_UNIX -DRTI_LINUX -DRTI_64BIT
 
 IDLGEN_DIR     = idlgen_$(DDS_PRODUCT)
@@ -52,3 +54,7 @@ $(EXEC) : $(IDLGEN_DIR) $(OBJS)
 
 $(IDLGEN_DIR) :
 	mkdir -p $@
+
+tell:
+	echo $(architecture_name)
+	echo $(NDDSHOME)
