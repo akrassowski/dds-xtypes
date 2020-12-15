@@ -1,0 +1,40 @@
+Script started on 2020-12-15 17:14:45-05:00 [<not executed on terminal>]
+Usage:  /home/andy/git/akrassowski/dds-xtypes/toc/toc_coredx_dds_4.5.0_linux [-pub | -sub] [-domain <domainId>] [-type <typeName>]
+Info: "-domain" was not specified. Defaulting to: 0
+1608070485.429266138: STARTUP     : LOG    : CoreDX DDS version 4.5.0
+1608070485.429275827: STARTUP     : LOG    : ... logging library in use
+Info: Starting publishing application. Domain: 0, Type: Shape4MutableExplicitID
+
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 0, data:   color: 'BLUE'
+   shapesize: 30
+   x: 0
+   y: 0
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape4MutableExplicitID" count: 1, change: 1
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 1, data:   color: 'BLUE'
+   shapesize: 30
+   x: 1
+   y: 2
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 2, data:   color: 'BLUE'
+   shapesize: 30
+   x: 2
+   y: 4
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 3, data:   color: 'BLUE'
+   shapesize: 30
+   x: 3
+   y: 6
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 4, data:   color: 'BLUE'
+   shapesize: 30
+   x: 4
+   y: 8
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 5, data:   color: 'BLUE'
+   shapesize: 30
+   x: 5
+   y: 10
+Writing Topic "XTYPESTestTopic", type "Shape4MutableExplicitID", count 6, data:   color: 'BLUE'
+   shapesize: 30
+   x: 6
+   y: 12
+Stopping...
+Stopping...
+
+Script done on 2020-12-15 17:14:52-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# shared defs for test runner for Shapes
+#
+ROOT=~/git/akrassowski/dds-xtypes
+RTI=$ROOT/srcCxx/rti_connext_dds_linux64
+TOC=$ROOT/toc/toc_coredx_dds_4.5.0_linux
+
+IAM=${0##*/}
+BASE=results/${IAM%%.*}
+list_descendants ()
+{
+  local children=$(ps -o pid= --ppid "$1")
+
+  for pid in $children
+  do
+    list_descendants "$pid"
+  done
+
+  echo "$children"
+}
+

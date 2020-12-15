@@ -1,0 +1,46 @@
+Script started on 2020-12-15 17:15:39-05:00 [<not executed on terminal>]
+Usage:  /home/andy/git/akrassowski/dds-xtypes/toc/toc_coredx_dds_4.5.0_linux [-pub | -sub] [-domain <domainId>] [-type <typeName>]
+Info: "-domain" was not specified. Defaulting to: 0
+1608070539.904064619: STARTUP     : LOG    : CoreDX DDS version 4.5.0
+1608070539.904080602: STARTUP     : LOG    : ... logging library in use
+Info: Starting subscribing application. Domain: 0, Type: Shape5MutableExplicitID
+
+Waiting for data on topic "XTYPESTestTopic", type "Shape5MutableExplicitID"
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape5MutableExplicitID", count: 1, change: 1
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape5MutableExplicitID", count: 2, change: 1
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape5MutableExplicitID", count: 1, change: -1
+
+Read data for Topic XTYPESTestTopic   color: 'BLUE'
+   x: 0
+   y: 0
+   shapesize: 30
+   angle: 0.000000
+
+Read data for Topic XTYPESTestTopic   color: 'BLUE'
+   x: 1
+   y: 2
+   shapesize: 30
+   angle: 0.000000
+
+Read data for Topic XTYPESTestTopic   color: 'BLUE'
+   x: 2
+   y: 4
+   shapesize: 30
+   angle: 0.000000
+
+Read data for Topic XTYPESTestTopic   color: 'BLUE'
+   x: 3
+   y: 6
+   shapesize: 30
+   angle: 0.000000
+
+Read data for Topic XTYPESTestTopic   color: 'BLUE'
+   x: 4
+   y: 8
+   shapesize: 30
+   angle: 0.000000
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape5MutableExplicitID", count: 0, change: -1
+Stopping...
+Stopping...
+
+Script done on 2020-12-15 17:15:46-05:00 [COMMAND_EXIT_CODE="0"]

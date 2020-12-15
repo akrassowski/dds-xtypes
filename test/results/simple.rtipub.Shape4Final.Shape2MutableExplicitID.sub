@@ -1,0 +1,16 @@
+Script started on 2020-12-15 15:59:17-05:00 [<not executed on terminal>]
+Usage:  /home/andy/git/akrassowski/dds-xtypes/toc/toc_coredx_dds_4.5.0_linux [-pub | -sub] [-domain <domainId>] [-type <typeName>]
+Info: "-domain" was not specified. Defaulting to: 0
+1608065957.998067838: STARTUP     : LOG    : CoreDX DDS version 4.5.0
+1608065957.998129249: STARTUP     : LOG    : ... logging library in use
+Info: Starting subscribing application. Domain: 0, Type: Shape2MutableExplicitID
+
+Waiting for data on topic "XTYPESTestTopic", type "Shape2MutableExplicitID"
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape2MutableExplicitID", count: 1, change: 1
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape2MutableExplicitID" count: 1, change: 1
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape2MutableExplicitID", count: 0, change: -1
+Stopping...
+Stopping...
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape2MutableExplicitID" count: 2, change: 1
+
+Script done on 2020-12-15 15:59:25-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,50 @@
+Script started on 2020-12-15 17:10:07-05:00 [<not executed on terminal>]
+Usage: /home/andy/git/akrassowski/dds-xtypes/srcCxx/rti_connext_dds_linux64 [-pub | -sub] [-domain <domainId>] [-type <typeName>][-seconds N] [-samples M]
+
+Info: "-domain" was not specified. Defaulting to: 0
+Info: Starting subscribing application. Domain: 0, Type: Shape2MutableExplicitID
+
+Info: will stop after 10 seconds
+Info: will stop after 5 samples
+Waiting for data on topic "XTYPESTestTopic", type "Shape2MutableExplicitID"
+on_subscription_matched: topic "XTYPESTestTopic", type "Shape2MutableExplicitID", count: 1, change: 1
+
+Read data for Topic XTYPESTestTopic
+   color: "BLUE"
+   x: 1
+   y: 2
+   shapesize: 30
+   angle: 0
+
+Read data for Topic XTYPESTestTopic
+   color: "BLUE"
+   x: 2
+   y: 4
+   shapesize: 30
+   angle: 0
+
+Read data for Topic XTYPESTestTopic
+   color: "BLUE"
+   x: 3
+   y: 6
+   shapesize: 30
+   angle: 0
+
+Read data for Topic XTYPESTestTopic
+   color: "BLUE"
+   x: 4
+   y: 8
+   shapesize: 30
+   angle: 0
+
+Read data for Topic XTYPESTestTopic
+   color: "BLUE"
+   x: 5
+   y: 10
+   shapesize: 30
+   angle: 0
+reached 5 samples, exiting
+Stopping...
+Stopping...
+
+Script done on 2020-12-15 17:10:14-05:00 [COMMAND_EXIT_CODE="0"]

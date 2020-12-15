@@ -1,0 +1,48 @@
+Script started on 2020-12-15 15:10:44-05:00 [<not executed on terminal>]
+Usage:  /home/andy/git/akrassowski/dds-xtypes/toc/toc_coredx_dds_4.5.0_linux [-pub | -sub] [-domain <domainId>] [-type <typeName>]
+Info: "-domain" was not specified. Defaulting to: 0
+1608063044.500405556: STARTUP     : LOG    : CoreDX DDS version 4.5.0
+1608063044.500415547: STARTUP     : LOG    : ... logging library in use
+Info: Starting publishing application. Domain: 0, Type: Shape3Default
+
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 0, data:   color: 'BLUE'
+   x: 0
+   y: 0
+   z: 0
+   shapesize: 30
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape3Default" count: 1, change: 1
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 1, data:   color: 'BLUE'
+   x: 1
+   y: 2
+   z: 3
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 2, data:   color: 'BLUE'
+   x: 2
+   y: 4
+   z: 6
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 3, data:   color: 'BLUE'
+   x: 3
+   y: 6
+   z: 9
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 4, data:   color: 'BLUE'
+   x: 4
+   y: 8
+   z: 12
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 5, data:   color: 'BLUE'
+   x: 5
+   y: 10
+   z: 15
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Default", count 6, data:   color: 'BLUE'
+   x: 6
+   y: 12
+   z: 18
+   shapesize: 30
+Stopping...
+Stopping...
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape3Default" count: 2, change: 1
+
+Script done on 2020-12-15 15:10:51-05:00 [COMMAND_EXIT_CODE="0"]

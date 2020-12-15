@@ -1,0 +1,45 @@
+Script started on 2020-12-15 16:19:58-05:00 [<not executed on terminal>]
+Usage: /home/andy/git/akrassowski/dds-xtypes/srcCxx/rti_connext_dds_linux64 [-pub | -sub] [-domain <domainId>] [-type <typeName>][-seconds N] [-samples M]
+
+Info: "-domain" was not specified. Defaulting to: 0
+Info: Starting publishing application. Domain: 0, Type: Shape3Extensible
+
+Info: will stop after 10 seconds
+Info: will stop after 5 samples
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape3Extensible" count: 1, change: 1
+on_inconsistent_topic: topic "XTYPESTestTopic", type "Shape3Extensible" count: 2, change: 1
+Writing Topic "XTYPESTestTopic", type "Shape3Extensible", count 0, data:
+   color: "BLUE"
+   x: 0
+   y: 0
+   z: 0
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Extensible", count 1, data:
+   color: "BLUE"
+   x: 1
+   y: 2
+   z: 3
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Extensible", count 2, data:
+   color: "BLUE"
+   x: 2
+   y: 4
+   z: 6
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Extensible", count 3, data:
+   color: "BLUE"
+   x: 3
+   y: 6
+   z: 9
+   shapesize: 30
+Writing Topic "XTYPESTestTopic", type "Shape3Extensible", count 4, data:
+   color: "BLUE"
+   x: 4
+   y: 8
+   z: 12
+   shapesize: 30
+reached 5 samples, exiting
+Stopping...
+Stopping...
+
+Script done on 2020-12-15 16:20:05-05:00 [COMMAND_EXIT_CODE="0"]
